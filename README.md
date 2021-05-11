@@ -1,8 +1,14 @@
-# typescript-eslint-prettier-boilerplate
+# "zap-challenge-back-end
+API for zap-challenge-front-end (https://github.com/caiodesign/eng-zap-challenge-typescript)
 
-Simple boilerplate with TypeScript, Prettier, and ESLint configured.
 
 ## Getting Started
-Install node modules: `npm install`
+Install node modules: `yarn`
 
-Run the code with auto restart: `npm run dev`
+Run the code with auto restart: `yarn dev`
+
+or on debug mode: `yarn debug`
+
+
+### Port
+Server will run at `http://localhost:6999`
