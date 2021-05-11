@@ -2,6 +2,7 @@ import express from 'express'
 
 export class PropertiesController {
   async sendProperties(req: express.Request, res: express.Response) {
+    console.log(req.app.locals.properties)
     if (req.app.locals.properties)
       return res.status(200).send(req.app.locals.properties)
 

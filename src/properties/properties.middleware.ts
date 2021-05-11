@@ -4,6 +4,8 @@ import Cache from '../common/common.cache'
 import { CACHE_KEY } from './properties.constants'
 import debug from 'debug'
 
+import { Pagination } from './properties.interfaces'
+
 const log: debug.IDebugger = debug('app:properties-middlewares')
 class PropertiesMiddleware {
   constructor(protected cache = Cache) {}
@@ -85,9 +87,20 @@ class PropertiesMiddleware {
     if (Array.isArray(_properties) && query.page) {
       const startIndex = Number(query.page) * limit
 
-      req.app.locals.properties = _properties.filter(
+      const result: Pagination = {
+        data: [],
+        pagination: {
+          total: req.app.locals.properties.length,
+          current_page: Number(query.page),
+          limit
+        }
+      }
+
+      result.data = _properties.filter(
         (property, index) => index >= startIndex && index <= startIndex + limit
       )
+
+      req.app.locals.properties = result
     }
 
     next()

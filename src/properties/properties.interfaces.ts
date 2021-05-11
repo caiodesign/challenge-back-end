@@ -16,6 +16,14 @@ export interface princingInfos {
   period?: string
 }
 
+export interface Pagination {
+  data: IProperty[] | []
+  pagination: {
+    total: number
+    current_page: number
+    limit: number
+  }
+}
 export interface IProperty {
   usableAreas: number
   listingType: string
