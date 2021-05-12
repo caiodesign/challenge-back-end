@@ -92,12 +92,14 @@ class PropertiesMiddleware {
         pagination: {
           total: req.app.locals.properties.length,
           current_page: Number(query.page),
+          total_pages: Math.ceil(req.app.locals.properties.length / limit),
           limit
         }
       }
 
       result.data = _properties.filter(
-        (property, index) => index >= startIndex && index <= startIndex + limit
+        (property, index) =>
+          index >= startIndex && index <= startIndex + limit - 1
       )
 
       req.app.locals.properties = result

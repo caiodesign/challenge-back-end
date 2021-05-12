@@ -38,7 +38,7 @@ export class PropertiesRoutes extends CommonRoutesConfig {
       .get(PropertiesController.sendProperties)
 
     this.app
-      .route(`/properties/:propertyId`)
+      .route(`/property/:propertyId`)
       .all(PropertiesMiddleware.validateRequiredProperty)
       .all(PropertiesMiddleware.validateCache.bind(PropertiesMiddleware))
       .all(PropertiesService.getProperties)

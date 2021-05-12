@@ -21,6 +21,7 @@ export interface Pagination {
   pagination: {
     total: number
     current_page: number
+    total_pages: number
     limit: number
   }
 }
