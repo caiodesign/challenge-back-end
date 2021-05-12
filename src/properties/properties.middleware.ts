@@ -92,7 +92,7 @@ class PropertiesMiddleware {
         pagination: {
           total: req.app.locals.properties.length,
           current_page: Number(query.page),
-          total_pages: Math.ceil(req.app.locals.properties.length / limit),
+          total_pages: Math.round(req.app.locals.properties.length / limit),
           limit
         }
       }
