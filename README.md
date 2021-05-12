@@ -3,6 +3,9 @@ API for zap-challenge-front-end (https://github.com/caiodesign/eng-zap-challenge
 
 
 ## Getting Started
+node version: `v14.16.0`
+see `.nvmrc`
+
 Install node modules: `yarn`
 
 Run the code with auto restart: `yarn dev`
